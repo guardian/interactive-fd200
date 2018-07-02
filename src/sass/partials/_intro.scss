@@ -1,0 +1,27 @@
+.uit-intro {
+    max-width: 620px;
+}
+
+.uit-intro__headline {
+    padding: 6px 0;
+    font-family: 'Guardian Egyptian Web';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.1;
+
+    @include mq(tablet) {
+        font-size: 48px;
+    }
+}
+
+.uit-intro__standfirst {
+    padding: 3px 0 0;
+    font-family: 'Guardian Egyptian Web';
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.2;
+
+    @include mq(tablet) {
+        font-size: 24px;
+    }
+}
