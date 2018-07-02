@@ -32,7 +32,6 @@ module.exports =  {
                 stepToShow = $(el).data('category');
             }
         }.bind(this));
-        //console.log(stepToShow);
         this.changeNav(stepToShow);
     },
 
@@ -43,5 +42,6 @@ module.exports =  {
                     $(el).addClass('uit-highlighted');
                 }
        }.bind(this));
+       //$('.uit-mobile-nav').append(step);
     }
 };
