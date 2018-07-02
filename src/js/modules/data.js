@@ -39,11 +39,11 @@ module.exports =  {
         var entryTemplate = handlebars.compile(entryHTML);
         var compiledEntries = entryTemplate(data);
 
-        $('.uit-focus-column').append(compiledEntries);
+        $('.uit-main').append(compiledEntries);
 
         var listTemplate = handlebars.compile(listHTML);
         var compiledList = listTemplate(data);
 
-        $('.uit-list').append(compiledList);
+        $('.uit-nav').append(compiledList);
     }
 };
