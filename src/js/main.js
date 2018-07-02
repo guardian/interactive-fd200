@@ -3,6 +3,8 @@ window.$ = require('./vendor/jquery.js');
 
 var share = require('./modules/share.js');
 var data = require('./modules/data.js');
+var scroll = require('./modules/scroll.js');
 
 share.init();
 data.init();
+scroll.init();
