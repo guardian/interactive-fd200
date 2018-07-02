@@ -2,16 +2,19 @@
     display: flex;
     position: relative;
     flex-direction: column;
-    height: 600px;
-    overflow: scroll;
+    height: 100%;
+    overflow: auto;
+    max-height: 600px;
+    margin-bottom: 100px;
+
 }
 
 .uit-list-column {
   background-color: $c-light-grey;
   color: $c-brown;
   flex: 1;
-  height: 1000px;
-  overflow: scroll;
+  overflow: auto;
+  height: 800px;
 
   li {
     background-color: $c-dark-red;
@@ -20,10 +23,18 @@
   }
 }
 
+.uit-list-search {
+  position: sticky;
+  top: 0;
+}
+
 .uit-top-bar {
   z-index: 10;
   top: 0;
+  position: sticky;
+  background-color: $c-white;
 }
+
 
 .uit-list-content
 {
@@ -34,5 +45,4 @@
 .uit-focus-column {
   background-color: $c-grey;
   flex: 1;
-  height: 600px;
 }
