@@ -1,19 +1,38 @@
 .uit-list-container {
     display: flex;
-    height: 500px;
+    position: relative;
+    flex-direction: column;
+    height: 600px;
+    overflow: scroll;
 }
 
-.uit-wide-column {
-  background-color: $c-red;
+.uit-list-column {
+  background-color: $c-light-grey;
   color: $c-brown;
   flex: 1;
   height: 1000px;
   overflow: scroll;
+
+  li {
+    background-color: $c-dark-red;
+    margin-bottom: 5px;
+    min-height: 50px;
+  }
 }
 
-.uit-small-column {
+.uit-top-bar {
+  z-index: 10;
+  top: 0;
+}
+
+.uit-list-content
+{
+  display: flex;
+  position: relative;
+}
+
+.uit-focus-column {
   background-color: $c-grey;
   flex: 1;
-  height: 1000px;
-  overflow: scroll;
+  height: 600px;
 }
