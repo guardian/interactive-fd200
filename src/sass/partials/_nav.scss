@@ -21,14 +21,6 @@
     overflow: hidden;
     max-height: 0;
     visibility: hidden;
-
-    @include mq(tablet) {
-      column-count: 1;
-    }
-
-    @include mq(desktop) {
-      column-count: 2;
-    }
 }
 
 .uit-nav__entries {
@@ -38,6 +30,14 @@
     list-style: none;
     column-count: 2;
     column-gap: 20px;
+
+    @include mq(tablet) {
+      column-count: 1;
+    }
+
+    @include mq(desktop) {
+      column-count: 2;
+    }
 }
 
 .uit-highlighted {
