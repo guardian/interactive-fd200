@@ -1,5 +1,6 @@
 var handlebars = require('handlebars');
 var entryHTML = require('../templates/entry.html');
+var listHTML = require('../templates/list.html');
 
 module.exports =  {
     init: function() {
@@ -29,6 +30,11 @@ module.exports =  {
         var entryTemplate = handlebars.compile(entryHTML);
         var compiledEntries = entryTemplate(data);
 
-        $('.uit').append(compiledEntries);
+        $('.uit-focus-column').append(compiledEntries);
+
+        var listTemplate = handlebars.compile(listHTML);
+        var compiledList = listTemplate(data);
+
+        $('.uit-list').append(compiledList);
     }
 };

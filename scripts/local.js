@@ -14,6 +14,7 @@ watch('src', function(file) {
     } else if (fileExt === 'html' || fileExt === 'svg') {
         console.log('updating html');
         cmd.get('npm run compile -- local html', function(data) { console.log(data); });
+        cmd.get('npm run compile -- local js', function(data) { console.log(data); });
     } else if (fileExt === 'scss') {
         console.log('updating css');
         cmd.get('npm run compile -- local css', function(data) { console.log(data); });
