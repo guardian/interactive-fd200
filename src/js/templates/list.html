@@ -1,3 +1,8 @@
 {{#each this}}
-    <li>{{ name }}</li>
+    <ul class='uit-nav__category'>
+        <h2 class='uit-nav__category-title'>{{ @key }}</h2>
+        {{#each this}}
+            <li class='uit-nav__entry'>{{ name }}</li>
+        {{/each}}
+    </ul>
 {{/each}}

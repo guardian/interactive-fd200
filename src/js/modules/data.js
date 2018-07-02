@@ -2,6 +2,8 @@ var handlebars = require('handlebars');
 var entryHTML = require('../templates/entry.html');
 var listHTML = require('../templates/list.html');
 
+var sections = ['Abolitionist','Diplomat','Educator','Enterprenuer','Writer','Feminist','Politican']
+
 module.exports =  {
     init: function() {
         this.initHandlebars();
@@ -21,12 +23,23 @@ module.exports =  {
     fetchData: function() {
         $.getJSON('https://interactive.guim.co.uk/docsdata-test/1rqzQ9H3sQO4dZDHORvmn2kTJAavbwy9P2_GvlTwsUDY.json', function(response) {
             var data = response.sheets.Sheet1;
-            console.log(data);
-            this.injectHTML(data);
+            var dataByCategory = {};
+
+            for (var i in sections) {
+                dataByCategory[sections[i]] = [];
+            }
+
+            for (var i in data) {
+                dataByCategory[data[i].category].push(data[i]);
+            }
+
+            this.injectHTML(dataByCategory);
         }.bind(this));
     },
 
     injectHTML: function(data) {
+        console.log(data);
+
         var entryTemplate = handlebars.compile(entryHTML);
         var compiledEntries = entryTemplate(data);
 
