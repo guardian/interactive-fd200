@@ -1,5 +1,45 @@
+.uit-category {
+    margin: 0;
+    list-style: none;
+}
+
 .uit-category__title {
     font-size: 32px;
     font-weight: 300;
     font-family: 'Guardian Egyptian Web';
+}
+
+.uit-entry {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid $c-light-grey;
+}
+
+.uit-entry__name,
+.uit-entry__quick-description {
+    font-family: 'Guardian Egyptian Web';
+    font-weight: 300;
+    font-size: 26px;
+    line-height: 1.3;
+    color: $c-red;
+    margin: 0;
+}
+
+.uit-entry__quick-description {
+    font-style: italic;
+}
+
+.uit-entry__portrait {
+    max-height: 400px;
+    margin: 0 auto;
+    display: block;
+}
+
+.uit-entry__description {
+    margin-top: 4px;
+    margin-bottom: 12px;
+}
+
+.uit-entry__button {
+    @include button($c-white, $c-red);
 }

@@ -1,24 +1,26 @@
 {{#each this}}
     <ul class='uit-category'>
-        <h2 class='uit-category__title'>{{ @key }}</h2>
+        <h2 class='uit-category__title'>The {{ @key }}s</h2>
+        <p class='uit-category__description'>Those organizing and speaking out against injustice, often times at risk of their careers or even their own lives. The risk of Douglass being re-enslaved did not stop him from becoming America’s most influential Black male abolitionist</p>
         {{#each this}}
             <li class='uit-entry'>
                 <h2 class='uit-entry__name'>{{ name }}</h2>
                 <h3 class='uit-entry__quick-description'>{{ quickDescription }}</h3>
 
                 {{#if hasIllustration}}
-                    <img class='uit-entry__profile' src='{{ path }}/images/{{ handlise name }}.jpg' />
+<!--                     <img class='uit-entry__portrait' src='{{ path }}/images/{{ handlise name }}.jpg' /> -->
+                    <img class='uit-entry__portrait' src='{{ path }}/assets/placeholder.jpg' />
                 {{/if}}
 
                 <div class='uit-entry__description'>
                     {{ description }}
                 </div>
                 {{#if link}}
-                    <a href='{{ link }}' class='uit-button'>Read more</a>
+                    <a href='{{ link }}' class='uit-entry__button'>Read more</a>
                 {{/if}}
 
                 {{#if twitter}}
-                    <a href='{{ twitter }}' class='uit-button'>Follow on Twitter</a>
+                    <a href='{{ twitter }}' class='uit-entry__button'>Follow on Twitter</a>
                 {{/if}}
             </li>
         {{/each}}
