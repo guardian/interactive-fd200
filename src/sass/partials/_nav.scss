@@ -1,5 +1,6 @@
 .uit-nav__category {
     margin-bottom: 6px;
+    overflow: hidden;
 }
 
 .uit-nav__category-title {
@@ -14,10 +15,22 @@
     list-style: none;
     column-count: 2;
     column-gap: 20px;
+    transition: all .8s ease-in-out;
+    will-change: max-height;
+    will-change: height;
+    overflow: hidden;
+    max-height: 0;
+    visibility: hidden;
 }
 
 .uit-highlighted {
-  .uit-nav__category-title {
-      font-weight: 700;
-  }
+    .uit-nav__category-title {
+        font-weight: 700;
+    }
+
+    .uit-nav__entries {
+        max-height: 1000px;
+        visibility: visible;
+        transition-delay: .4s;
+    }
 }

@@ -37,10 +37,10 @@ module.exports =  {
 
     changeNav: function(step) {
         $('.uit-nav__category').each(function(i, el) {
-          $(el).removeClass('uit-highlighted');
+            $(el).removeClass('uit-highlighted');
             if ($(el).hasClass('uit-nav__category--' + step)) {
-                    $(el).addClass('uit-highlighted');
-                }
+                $(el).addClass('uit-highlighted');
+            }
        }.bind(this));
        //$('.uit-mobile-nav').append(step);
     }
