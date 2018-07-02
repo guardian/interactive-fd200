@@ -1,4 +1,26 @@
 {{#each this}}
-    <h1>{{ name }}</h1>
-    <p>{{ description }}</p>
+    <ul class='uit-category'>
+        <h2 class='uit-category__title'>{{ @key }}</h2>
+        {{#each this}}
+            <li class='uit-entry'>
+                <h2 class='uit-entry__name'>{{ name }}</h2>
+                <h3 class='uit-entry__quick-description'>{{ quickDescription }}</h3>
+
+                {{#if hasIllustration}}
+                    <img class='uit-entry__profile' src='{{ path }}/images/{{ handlise name }}.jpg' />
+                {{/if}}
+
+                <div class='uit-entry__description'>
+                    {{ description }}
+                </div>
+                {{#if link}}
+                    <a href='{{ link }}' class='uit-button'>Read more</a>
+                {{/if}}
+
+                {{#if twitter}}
+                    <a href='{{ twitter }}' class='uit-button'>Follow on Twitter</a>
+                {{/if}}
+            </li>
+        {{/each}}
+    </ul>
 {{/each}}
