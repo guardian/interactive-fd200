@@ -9,12 +9,8 @@
     font-size: 26px;
 }
 
-.uit-nav__entries {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    column-count: 2;
-    column-gap: 20px;
+.uit-nav__entries-wrapper {
+    position: relative;
     transition: all .8s ease-in-out;
     will-change: max-height;
     will-change: height;
@@ -31,12 +27,21 @@
     }
 }
 
+.uit-nav__entries {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    column-count: 2;
+    column-gap: 20px;
+}
+
 .uit-highlighted {
     .uit-nav__category-title {
         font-weight: 700;
     }
 
-    .uit-nav__entries {
+    .uit-nav__entries-wrapper {
         max-height: 1000px;
         visibility: visible;
         transition-delay: .4s;
