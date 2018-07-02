@@ -1,8 +1,10 @@
 {{#each this}}
-    <ul class='uit-nav__category uit-nav__category--{{ handlise @key }}'>
+    <div class='uit-nav__category uit-nav__category--{{ handlise @key }}'>
         <h2 class='uit-nav__category-title'>{{ @key }}</h2>
-        {{#each this}}
-            <li class='uit-nav__entry'>{{ name }}</li>
-        {{/each}}
-    </ul>
+        <ul class='uit-nav__entries'>
+            {{#each this}}
+                <li class='uit-nav__entry'>{{ name }}</li>
+            {{/each}}
+        </ul>
+    </div>
 {{/each}}
