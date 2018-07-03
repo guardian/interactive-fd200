@@ -8,7 +8,7 @@
       min-height: 100vh;
       width: 240px;
       position: fixed;
-      border-right: 1px solid $c-black;
+      border-right: 1px solid $c-light-red;
     }
 
     @include mq(desktop) {

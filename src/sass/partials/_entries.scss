@@ -6,7 +6,7 @@
 .uit-category__content {
     margin-bottom: 24px;
     padding-bottom: 24px;
-    border-bottom: 1px solid $c-black;
+    border-bottom: 1px solid $c-light-red;
 }
 
 .uit-category__title {
@@ -24,7 +24,7 @@
 
 .uit-entry {
     padding-bottom: 24px;
-    border-bottom: 1px solid $c-black;
+    border-bottom: 1px solid $c-light-red;
     margin-bottom: 24px;
 }
 
@@ -62,5 +62,9 @@
 }
 
 .uit-entry__button {
-    @include button($c-white, $c-light-red);
+    @include button($c-light-red, $c-background);
+    font-size: 14px;
+    border: 1px solid $c-light-red;
+    padding: 5px 32px 2px 8px;
+    margin-top: 6px;
 }
