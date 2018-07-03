@@ -1,4 +1,3 @@
-
 var windowTop, windowHeight, steps, section;
 
 module.exports =  {
@@ -16,6 +15,14 @@ module.exports =  {
             this.setStep();
         }.bind(this));
 
+        $(document).on('click', 'a[href*="#"]', function(e) {
+            e.preventDefault();
+            var target = $(e.currentTarget).attr('href');
+
+            $('html, body').animate({
+                scrollTop: $(target).position().top
+            })
+        }.bind(this));
     },
 
     setStep: function() {
