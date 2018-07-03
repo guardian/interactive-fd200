@@ -1,9 +1,9 @@
 {{#each this}}
-    <ul class='uit-category' data-category='{{ handlise @key }}'>
+    <ul id="{{ handlise @key }}" class='uit-category' data-category='{{ handlise @key }}'>
         <h2 class='uit-category__title'>The {{ @key }}s</h2>
         <p class='uit-category__description'>Those organizing and speaking out against injustice, often times at risk of their careers or even their own lives. The risk of Douglass being re-enslaved did not stop him from becoming America’s most influential Black male abolitionist</p>
         {{#each this}}
-            <li class='uit-entry'>
+            <li id="{{ handlise name }}" class='uit-entry'>
                 <h2 class='uit-entry__name'>{{ name }}</h2>
                 <h3 class='uit-entry__quick-description'>{{ quickDescription }}</h3>
 

@@ -1,24 +1,24 @@
 
-var windowTop, windowHeight, steps;
+var windowTop, windowHeight, steps, section;
 
 module.exports =  {
     init: function() {
         this.bindings();
-        this.onScroll();
+        this.setStep();
     },
 
     bindings: function() {
         $(window).scroll(function() {
-            this.onScroll();
+            this.setStep();
         }.bind(this));
 
         $(window).resize(function() {
-            this.onScroll();
+            this.setStep();
         }.bind(this));
-    },
 
-    onScroll: function() {
-        this.setStep();
+        $(window).resize(function() {
+            this.setStep();
+        }.bind(this));
     },
 
     setStep: function() {
@@ -43,5 +43,9 @@ module.exports =  {
                 }
        }.bind(this));
        $('.uit-mobile-nav').html(step);
+    },
+
+    scrollTo: function(category) {
+      alert('category: ' + category);
     }
 };
