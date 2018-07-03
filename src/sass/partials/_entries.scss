@@ -3,16 +3,25 @@
     list-style: none;
 }
 
-.uit-category__title {
-    font-size: 32px;
-    font-weight: 700;
-    font-family: 'Guardian Egyptian Web';
-    border-top: 1px solid $c-light-grey;
+.uit-category__content {
+    border-top: 2px solid $c-black;
+    border-left: 1px solid $c-black;
+    background-color: $c-white;
+    padding: 4px 8px;
+    margin-bottom: 24px;
 }
 
-.uit-category__description{
-  margin-bottom: 48px;
-  border-bottom: 1px solid $c-light-grey;
+.uit-category__title {
+    @include banding($c-light-red);
+    font-size: 32px;
+    color: $c-white;
+    font-weight: normal;
+    font-family: 'Guardian Figures';
+    margin-bottom: 4px;
+}
+
+.uit-category__description {
+    margin-bottom: 12px;
 }
 
 .uit-entry {
