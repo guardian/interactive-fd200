@@ -30,13 +30,13 @@ module.exports =  {
         var stepToShow = null;
         windowTop = $(window).scrollTop();
         windowHeight = $(window).height();
-        var windowBottom = windowTop + windowHeight;
 
         $('.uit-category').each(function(i, el) {
             if (windowTop >= $(el).offset().top - this.percentageOfHeight(10)) {
                 stepToShow = $(el).data('category');
             }
         }.bind(this));
+
         $('.uit-mobile-nav').html('');
         this.changeNav(stepToShow);
     },
