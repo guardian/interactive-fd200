@@ -1,12 +1,16 @@
-{{#each this}}
-    <div class='uit-nav__category uit-nav__category--{{ handlise @key }}'>
-        <h2 class='uit-nav__category-title'>{{ @key }}</h2>
+{{#categories}}
+    <div class='uit-nav__category uit-nav__category--{{ handle }}'>
+        <a href='#{{ handle }}'>
+          <h2 class='uit-nav__category-title'>{{ name }}</h2>
+        </a>
         <div class='uit-nav__entries-wrapper'>
             <ul class='uit-nav__entries'>
-                {{#each this}}
+                {{#entries}}
+                <a href='#{{ handle }}'>
                     <li class='uit-nav__entry'>{{ name }}</li>
-                {{/each}}
+                </a>
+                {{/entries}}
             </ul>
         </div>
     </div>
-{{/each}}
+{{/categories}}

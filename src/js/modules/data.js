@@ -25,6 +25,7 @@ module.exports =  {
             for (var i in data) {
                 for (var category in categories) {
                     if (categories[category].name === data[i].category) {
+                        data[i].handle = data[i].name.replace(' ', '-').toLowerCase();
                         categories[category].entries.push(data[i]);
                     }
                 }

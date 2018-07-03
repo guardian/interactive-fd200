@@ -23,6 +23,14 @@
     visibility: hidden;
 }
 
+.uit-nav__category:hover {
+
+   .uit-nav__entries-wrapper {
+     max-height: 1000px;
+     visibility: visible;
+}
+}
+
 .uit-nav__entries {
     width: 100%;
     margin: 0;
