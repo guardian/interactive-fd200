@@ -1,4 +1,5 @@
 var Mustache = require('mustache');
+var markdown = require('markdown').markdown;
 var entryHTML = require('../templates/entry.html');
 var listHTML = require('../templates/list.html');
 
@@ -26,6 +27,7 @@ module.exports =  {
                 for (var category in categories) {
                     if (categories[category].name === data[i].category) {
                         data[i].handle = data[i].name.replace(' ', '-').toLowerCase();
+                        data[i].description = markdown.toHTML(data[i].description);
                         categories[category].entries.push(data[i]);
                     }
                 }
