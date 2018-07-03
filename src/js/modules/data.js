@@ -44,6 +44,8 @@ module.exports =  {
 
         var compiledList = Mustache.render(listHTML, data);
         $('.uit-nav').append(compiledList);
+
+        this.hideLoader();
     },
 
     getDescription: function(section) {
@@ -58,5 +60,9 @@ module.exports =  {
         };
 
         return descriptions[section];
+    },
+
+    hideLoader: function() {
+        $('.uit-loading').addClass('is-loaded');
     }
 };
