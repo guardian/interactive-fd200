@@ -24,7 +24,6 @@
 }
 
 .uit-nav__category:hover {
-
    .uit-nav__entries-wrapper {
      max-height: 1000px;
      visibility: visible;
@@ -58,4 +57,9 @@
         visibility: visible;
         transition-delay: .4s;
     }
+}
+
+.uit-dropdown__button {
+  float: right;
+  margin-right: 20px;
 }
