@@ -4,11 +4,13 @@
     }
 
     @include mq(tablet) {
-      display: block;
-      min-height: 100vh;
-      width: 240px;
-      position: fixed;
-      border-right: 1px solid $c-light-red;
+        display: block;
+        min-height: 100vh;
+        width: 240px;
+        position: fixed;
+        top: 0;
+        padding-top: 48px;
+        border-right: 1px solid $c-light-red;
     }
 
     @include mq(desktop) {
@@ -37,7 +39,6 @@
 }
 
 .uit-main {
-
     scroll-behavior: smooth;
 
     @include mq(tablet) {
