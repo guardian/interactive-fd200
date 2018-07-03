@@ -33,12 +33,16 @@ module.exports =  {
         var windowBottom = windowTop + windowHeight;
 
         $('.uit-category').each(function(i, el) {
-            if (windowBottom >= $(el).offset().top) {
+            if (windowTop >= $(el).offset().top - this.percentageOfHeight(10)) {
                 stepToShow = $(el).data('category');
             }
         }.bind(this));
         $('.uit-mobile-nav').html('');
         this.changeNav(stepToShow);
+    },
+
+    percentageOfHeight: function(percentage) {
+        return (windowHeight / 100) * percentage;
     },
 
     changeNav: function(step) {
