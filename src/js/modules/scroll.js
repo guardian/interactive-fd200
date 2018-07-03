@@ -23,6 +23,11 @@ module.exports =  {
             $('html, body').animate({
                 scrollTop: $(target).position().top
             })
+
+            if( $('.uit-dropdown__button').hasClass('uit-dropdown__button-rotated')) {
+              this.hideMenu();
+            }
+
         }.bind(this));
 
         $('.uit-dropdown__button').click(function(e) {
@@ -41,6 +46,7 @@ module.exports =  {
                 stepToShow = $(el).data('category');
             }
         }.bind(this));
+        $('.uit-nav__category-title').addClass('uit-nav__hidden');
         this.changeNav(stepToShow);
     },
 
@@ -73,6 +79,7 @@ module.exports =  {
             if ($(el).hasClass('uit-nav__category--' + step)) {
                     $(el).addClass('uit-highlighted');
                     $('.uit-mobile-nav__category-title').html(sections[step]);
+                    $('.uit-nav__category-title').removeClass('uit-nav__hidden');
                 }
        }.bind(this));
     },

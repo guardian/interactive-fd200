@@ -20,6 +20,7 @@
   font-weight: 700 !important;
   width: 96%;
   z-index: 100;
+  overflow: scroll;
 
   @include mq(mobile) {
     display: flex;

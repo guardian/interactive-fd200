@@ -59,6 +59,13 @@
     }
 }
 
+.uit-nav__hidden {
+  visibility: hidden;
+  @include mq(tablet) {
+    visibility: visible;
+  }
+}
+
 .uit-nav__mobile {
   display: block !important;
   position: fixed !important;
@@ -77,10 +84,10 @@
 .uit-dropdown__button {
   float: right;
   margin-right: 20px;
-  transition: transform .5s ease-in-out;
+  transition: transform .4s ease-in-out;
 }
 
 .uit-dropdown__button-rotated {
   transform: rotate(180deg);
-  transition: transform .5s ease-in-out;
+  transition: transform .4s ease-in-out;
 }
