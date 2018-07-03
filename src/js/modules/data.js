@@ -1,4 +1,4 @@
-var handlebars = require('handlebars');
+var Mustache = require('mustache');
 var entryHTML = require('../templates/entry.html');
 var listHTML = require('../templates/list.html');
 
@@ -6,44 +6,39 @@ var sections = ['Abolitionist','Diplomat','Educator','Enterprenuer','Writer','Fe
 
 module.exports =  {
     init: function() {
-        this.initHandlebars();
         this.fetchData();
-    },
-
-    initHandlebars: function() {
-        handlebars.registerHelper('handlise', function(string) {
-            return string.replace(' ', '-').toLowerCase();
-        });
     },
 
     fetchData: function() {
         $.getJSON('https://interactive.guim.co.uk/docsdata-test/1rqzQ9H3sQO4dZDHORvmn2kTJAavbwy9P2_GvlTwsUDY.json', function(response) {
             var data = response.sheets.Sheet1;
-            var dataByCategory = {};
+            var categories = [];
 
             for (var i in sections) {
-                dataByCategory[sections[i]] = [];
+                categories.push({
+                    name: sections[i],
+                    handle: i.toLowerCase(),
+                    entries: []
+                });
             }
 
             for (var i in data) {
-                dataByCategory[data[i].category].push(data[i]);
+                for (var category in categories) {
+                    if (categories[category].name === data[i].category) {
+                        categories[category].entries.push(data[i]);
+                    }
+                }
             }
 
-            this.injectHTML(dataByCategory);
+            this.injectHTML({categories: categories});
         }.bind(this));
     },
 
     injectHTML: function(data) {
-        console.log(data);
-
-        var entryTemplate = handlebars.compile(entryHTML);
-        var compiledEntries = entryTemplate(data);
-
+        var compiledEntries = Mustache.render(entryHTML, data);
         $('.uit-main').append(compiledEntries);
 
-        var listTemplate = handlebars.compile(listHTML);
-        var compiledList = listTemplate(data);
-
+        var compiledList = Mustache.render(listHTML, data);
         $('.uit-nav').append(compiledList);
     }
 };

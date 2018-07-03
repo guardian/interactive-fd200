@@ -1,28 +1,28 @@
-{{#each this}}
-    <ul class='uit-category' data-category='{{ handlise @key }}'>
-        <h2 class='uit-category__title'>The {{ @key }}s</h2>
+{{#categories}}
+    <ul class='uit-category' data-category='{{ handle }}'>
+        <h2 class='uit-category__title'>The {{ name }}s</h2>
         <p class='uit-category__description'>Those organizing and speaking out against injustice, often times at risk of their careers or even their own lives. The risk of Douglass being re-enslaved did not stop him from becoming America’s most influential Black male abolitionist</p>
-        {{#each this}}
+        {{#entries}}
             <li class='uit-entry'>
                 <h2 class='uit-entry__name'>{{ name }}</h2>
                 <h3 class='uit-entry__quick-description'>{{ quickDescription }}</h3>
 
-                {{#if hasIllustration}}
+                {{#hasIllustration}}
 <!--                     <img class='uit-entry__portrait' src='{{ path }}/images/{{ handlise name }}.jpg' /> -->
                     <img class='uit-entry__portrait' src='{{ path }}/assets/placeholder.jpg' />
-                {{/if}}
+                {{/hasIllustration}}
 
                 <div class='uit-entry__description'>
                     {{ description }}
                 </div>
-                {{#if link}}
+                {{#link}}
                     <a href='{{ link }}' class='uit-entry__button'>Read more <svg class='uit-icon' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M38.65 25.58L37 27.21 26.79 37.44l-1.1-1.11 8.53-10.19H12.5v-2.28h21.72l-8.53-10.19 1.1-1.1L37 22.79l1.63 1.63v1.16z"/></svg></a>
-                {{/if}}
+                {{/link}}
 
-                {{#if twitter}}
+                {{#twitter}}
                     <a href='{{ twitter }}' class='uit-entry__button'>Follow on Twitter <svg class='uit-icon' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M38.65 25.58L37 27.21 26.79 37.44l-1.1-1.11 8.53-10.19H12.5v-2.28h21.72l-8.53-10.19 1.1-1.1L37 22.79l1.63 1.63v1.16z"/></svg></a>
-                {{/if}}
+                {{/twitter}}
             </li>
-        {{/each}}
+        {{/entries}}
     </ul>
-{{/each}}
+{{/categories}}
