@@ -9,9 +9,13 @@
     font-family: 'Guardian Egyptian Web';
 }
 
+.uit-category__description{
+  margin-bottom: 48px;
+  border-bottom: 1px solid $c-light-grey;
+}
+
 .uit-entry {
-    margin-bottom: 24px;
-    padding-bottom: 24px;
+    padding-bottom: 48px;
     border-bottom: 1px solid $c-light-grey;
 }
 
