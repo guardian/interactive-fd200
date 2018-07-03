@@ -16,9 +16,6 @@ module.exports =  {
             this.setStep();
         }.bind(this));
 
-        $(window).resize(function() {
-            this.setStep();
-        }.bind(this));
     },
 
     setStep: function() {
@@ -44,8 +41,4 @@ module.exports =  {
        }.bind(this));
        $('.uit-mobile-nav').html(step);
     },
-
-    scrollTo: function(category) {
-      alert('category: ' + category);
-    }
 };
