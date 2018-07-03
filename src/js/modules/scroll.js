@@ -1,4 +1,4 @@
-var windowTop, windowHeight, steps, section;
+var windowTop, windowHeight, steps, section, downButton;
 var sections = ['Abolitionist','Diplomat','Educator','Enterprenuer','Writer','Feminist','Politican'];
 
 module.exports =  {
@@ -24,6 +24,11 @@ module.exports =  {
                 scrollTop: $(target).position().top
             })
         }.bind(this));
+
+        $('.uit-dropdown__button').click(function(e) {
+          e.preventDefault();
+          this.showMenu();
+        }.bind(this));
     },
 
     setStep: function() {
@@ -36,8 +41,6 @@ module.exports =  {
                 stepToShow = $(el).data('category');
             }
         }.bind(this));
-
-        $('.uit-mobile-nav').html('');
         this.changeNav(stepToShow);
     },
 
@@ -45,13 +48,31 @@ module.exports =  {
         return (windowHeight / 100) * percentage;
     },
 
+    showMenu: function() {
+      $('.uit-nav').addClass('uit-nav__mobile');
+      $('.uit-dropdown__button').addClass('uit-dropdown__button-rotated');
+      $('.uit-dropdown__button').unbind();
+      $('.uit-dropdown__button-rotated').click(function(e) {
+        e.preventDefault();
+        this.hideMenu();
+      }.bind(this));
+    },
+
+    hideMenu: function() {
+      $('.uit-nav').removeClass('uit-nav__mobile');
+      $('.uit-dropdown__button-rotated').removeClass('uit-dropdown__button-rotated');
+      $('.uit-dropdown__button').click(function(e) {
+        e.preventDefault();
+        this.showMenu();
+      }.bind(this));
+    },
+
     changeNav: function(step) {
         $('.uit-nav__category').each(function(i, el) {
           $(el).removeClass('uit-highlighted');
             if ($(el).hasClass('uit-nav__category--' + step)) {
                     $(el).addClass('uit-highlighted');
-                    button = "<a href='' class='uit-share__button uit-dropdown__button'><svg class='uit-icon' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'><path d='M36.33 19.99L25 29.48l-11.33-9.49-1.11 1.11 10.23 10.22 1.63 1.63h1.16l1.63-1.63L37.44 21.1l-1.11-1.11z'/></svg></a>";
-                    $('.uit-mobile-nav').html(sections[step] + button);
+                    $('.uit-mobile-nav__category-title').html(sections[step]);
                 }
        }.bind(this));
     },
