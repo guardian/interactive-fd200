@@ -3,6 +3,11 @@ figure.element-atom {
     margin-bottom: 0;
 }
 
+#bannerandheader {
+    position: relative;
+    z-index: 2;
+}
+
 // this fixes margin issues on apps
 figure.element-atom,
 figure.interactive-atom {
