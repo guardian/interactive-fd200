@@ -25,3 +25,8 @@ figure.interactive-atom {
         margin: 0;
     }
 }
+
+.nav-is-expanded,
+.nav-is-expanded body {
+    overflow: hidden;
+}

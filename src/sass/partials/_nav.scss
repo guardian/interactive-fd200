@@ -75,13 +75,6 @@
 }
 
 .uit-nav__mobile {
-    display: block !important;
-    position: fixed !important;
-    background-color: $c-white !important;
-    top: 6%;
-    z-index: 100;
-    width: 100%;
-    height: 100vh;
 
     .uit-nav__entries-wrapper {
         visibility: visible;
@@ -90,12 +83,25 @@
 }
 
 .uit-dropdown__button {
+    margin-top: 4px;
+    margin-bottom: 4px;
     float: right;
-    margin-right: 20px;
     transition: transform .4s ease-in-out;
 }
 
-.uit-dropdown__button-rotated {
-    transform: rotate(180deg);
-    transition: transform .4s ease-in-out;
+.nav-is-expanded {
+    @include mq($until: tablet) {
+        .uit-nav {
+            transform: translateY(0);
+        }
+
+        .uit-nav__entries-wrapper {
+            visibility: visible;
+            max-height: 1000px;
+        }
+
+        .uit-dropdown__button {
+            transform: rotate(180deg);
+        }
+    }
 }

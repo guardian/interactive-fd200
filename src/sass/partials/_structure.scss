@@ -1,6 +1,22 @@
 .uit-nav {
-    @include mq(mobile) {
-      display: none;
+    @include mq($until: tablet) {
+        display: block;
+        position: fixed;
+        background-color: $c-white;
+        top: 41px;
+        z-index: 100;
+        width: 100%;
+        left: 0;
+        right: 0;
+        height: calc(100vh - 41px);
+        padding: 0 10px;
+        transform: translateY(-100%);
+        transition: transform 0.4s linear;
+        overflow-y: scroll;
+    }
+
+    @include mq(mobileLandscape, tablet) {
+        padding: 0 20px;
     }
 
     @include mq(tablet) {
@@ -19,23 +35,26 @@
 }
 
 .uit-mobile-nav {
-  top: 0;
-  font-weight: 700 !important;
-  width: 96%;
-  z-index: 100;
-  overflow: scroll;
-
-  @include mq(mobile) {
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    box-sizing: border-box;
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid black;
     position: fixed;
     background-color: $c-white;
-  }
+    padding: 0 10px;
 
-  @include mq(tablet) {
-    display: none;
-  }
+    @include mq(mobileLandscape) {
+        padding: 0 20px;
+    }
+
+    @include mq(tablet) {
+        display: none;
+    }
 }
 
 .uit-main {
