@@ -4,11 +4,9 @@
 }
 
 .uit-category__content {
-    border-top: 2px solid $c-black;
-    border-left: 1px solid $c-black;
-    background-color: $c-white;
-    padding: 4px 8px;
     margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid $c-black;
 }
 
 .uit-category__title {
@@ -25,7 +23,15 @@
 }
 
 .uit-entry {
-    padding-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid $c-black;
+    margin-bottom: 24px;
+}
+
+.uit-entry__header {
+    float: left;
+    width: 240px;
+    padding-bottom: 24px;
 }
 
 .uit-entry__name,
@@ -34,16 +40,18 @@
     font-weight: 300;
     font-size: 26px;
     line-height: 1.3;
-    color: $c-red;
+    color: $c-black;
     margin: 0;
 }
 
 .uit-entry__quick-description {
     font-style: italic;
+    color: $c-light-red;
 }
 
 .uit-entry__portrait {
     max-height: 400px;
+    max-width: 180px;
     margin: 0 auto;
     display: block;
 }
@@ -54,5 +62,5 @@
 }
 
 .uit-entry__button {
-    @include button($c-white, $c-red);
+    @include button($c-white, $c-light-red);
 }

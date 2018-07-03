@@ -8,9 +8,10 @@
 }
 
 .uit-nav__category-title {
-    font-family: 'Guardian Egyptian Web';
-    font-weight: 300;
+    font-family: 'Guardian Figures';
+    font-weight: normal;
     font-size: 26px;
+    color: $c-black;
 }
 
 .uit-nav__entries-wrapper {
@@ -24,10 +25,10 @@
 }
 
 .uit-nav__category:hover {
-   .uit-nav__entries-wrapper {
-     max-height: 1000px;
-     visibility: visible;
-}
+    .uit-nav__entries-wrapper {
+        max-height: 1000px;
+        visibility: visible;
+    }
 }
 
 .uit-nav__entries {
@@ -47,9 +48,15 @@
     }
 }
 
+.uit-nav__entry {
+    color: $c-black;
+    font-family: 'Guardian Egyptian Web';
+    font-weight: 400;
+}
+
 .uit-highlighted {
     .uit-nav__category-title {
-        font-weight: 700;
+        color: $c-light-red;
     }
 
     .uit-nav__entries-wrapper {
@@ -60,34 +67,35 @@
 }
 
 .uit-nav__hidden {
-  visibility: hidden;
-  @include mq(tablet) {
-    visibility: visible;
-  }
+    visibility: hidden;
+
+    @include mq(tablet) {
+        visibility: visible;
+    }
 }
 
 .uit-nav__mobile {
-  display: block !important;
-  position: fixed !important;
-  background-color: $c-white !important;
-  top: 6%;
-  z-index: 100;
-  width: 100%;
-  height: 100vh;
+    display: block !important;
+    position: fixed !important;
+    background-color: $c-white !important;
+    top: 6%;
+    z-index: 100;
+    width: 100%;
+    height: 100vh;
 
-  .uit-nav__entries-wrapper {
-      visibility: visible;
-      max-height: 1000px;
-  }
+    .uit-nav__entries-wrapper {
+        visibility: visible;
+        max-height: 1000px;
+    }
 }
 
 .uit-dropdown__button {
-  float: right;
-  margin-right: 20px;
-  transition: transform .4s ease-in-out;
+    float: right;
+    margin-right: 20px;
+    transition: transform .4s ease-in-out;
 }
 
 .uit-dropdown__button-rotated {
-  transform: rotate(180deg);
-  transition: transform .4s ease-in-out;
+    transform: rotate(180deg);
+    transition: transform .4s ease-in-out;
 }
