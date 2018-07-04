@@ -22,7 +22,7 @@
     @include mq(tablet) {
         display: block;
         min-height: 100vh;
-        width: 240px;
+        width: 200px;
         position: fixed;
         top: 0;
         padding-top: 48px;
@@ -61,10 +61,20 @@
     scroll-behavior: smooth;
 
     @include mq(tablet) {
-      margin-left: 200px;
+      margin-left: 220px;
     }
 
     @include mq(desktop) {
       margin-left: 340px;
     }
+}
+
+.uit-credits {
+  @include mq(tablet) {
+    margin-left: 240px;
+  }
+
+  @include mq(desktop) {
+    margin-left: 340px;
+  }
 }

@@ -1,0 +1,27 @@
+.uit-credits {
+    @include mq(tablet) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.uit-credits__title {
+    font-family: 'Guardian Sans Web';
+    font-size: 20px;
+    color: $c-grey;
+    width: 100%;
+}
+
+.uit-credits p {
+    font-family: 'Guardian Sans Web';
+    font-size: 16px;
+    color: $c-grey;
+
+    @include mq(tablet) {
+        width: 50%;
+    }
+
+    strong {
+        display: block;
+    }
+}

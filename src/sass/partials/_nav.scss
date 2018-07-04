@@ -12,6 +12,19 @@
     font-weight: normal;
     font-size: 26px;
     color: $c-black;
+
+    @include mq(tablet) {
+      font-size: 20px;
+    }
+
+    @include mq(desktop) {
+      font-size: 24px;
+    }
+}
+
+.uit-nav__category-title:hover{
+  color: #ff4e36;
+  text-decoration: none;
 }
 
 .uit-nav__entries-wrapper {
@@ -25,6 +38,7 @@
 }
 
 .uit-nav__category:hover {
+  text-decoration: none;
     .uit-nav__entries-wrapper {
         max-height: 1000px;
         visibility: visible;
@@ -54,9 +68,17 @@
     font-weight: 400;
 }
 
+.uit-nav__entry:hover {
+    color: #ff4e36;
+}
+
 .uit-highlighted {
     .uit-nav__category-title {
-        color: $c-light-red;
+        color: $c-white;
+        background-color: #ff4e36;
+        font-size: 28px;
+        transition: background-color 0.4s ease,
+                    font-size .5s ease;
     }
 
     .uit-nav__entries-wrapper {
@@ -104,4 +126,8 @@
             transform: rotate(180deg);
         }
     }
+}
+
+a:hover {
+  text-decoration: none;
 }
