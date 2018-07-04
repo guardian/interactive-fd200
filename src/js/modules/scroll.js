@@ -5,6 +5,7 @@ module.exports =  {
     init: function() {
         this.bindings();
         this.setStep();
+        this.getRandom();
     },
 
     bindings: function() {
@@ -34,7 +35,6 @@ module.exports =  {
           e.preventDefault();
           this.showMenu();
         }.bind(this));
-
     },
 
     setStep: function() {
@@ -49,6 +49,7 @@ module.exports =  {
         }.bind(this));
         $('.uit-nav__category-title').addClass('uit-nav__hidden');
         this.changeNav(stepToShow);
+        this.getRandom();
     },
 
     percentageOfHeight: function(percentage) {
@@ -83,4 +84,11 @@ module.exports =  {
                 }
        }.bind(this));
     },
+
+    getRandom: function(){
+      var random = ( Math.floor(Math.random() * $('.uit-entry').length));
+      var random_entry = $('.uit-entry')[random];
+      var random_id = $(random_entry).attr('id');
+      $('#uit-nav__random').attr('href', '#' + random_id);
+    }
 };

@@ -2,6 +2,7 @@ var Mustache = require('mustache');
 var markdown = require('markdown').markdown;
 var entryHTML = require('../templates/entry.html');
 var listHTML = require('../templates/list.html');
+var count;
 
 var sections = ['Abolitionist','Diplomat','Educator','Enterprenuer','Writer','Feminist','Politican']
 
@@ -43,8 +44,7 @@ module.exports =  {
         $('.uit-main').append(compiledEntries);
 
         var compiledList = Mustache.render(listHTML, data);
-        $('.uit-nav').append(compiledList);
-
+        $('.uit-nav__category-wrapper').append(compiledList);
         this.hideLoader();
     },
 
@@ -64,5 +64,5 @@ module.exports =  {
 
     hideLoader: function() {
         $('.uit-loading').addClass('is-loaded');
-    }
+    },
 };
