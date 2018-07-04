@@ -23,7 +23,7 @@
 }
 
 .uit-nav__category-title:hover{
-  color: #ff4e36;
+  color: $c-light-red;
   text-decoration: none;
 }
 
@@ -75,7 +75,7 @@
 .uit-highlighted {
     .uit-nav__category-title {
         color: $c-white;
-        background-color: #ff4e36;
+        background-color: $c-light-red;
         font-size: 28px;
         transition: background-color 0.4s ease,
                     font-size .5s ease;
