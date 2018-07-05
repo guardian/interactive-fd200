@@ -53,7 +53,7 @@
     }
 
     @include mq(tablet) {
-        display: none;
+        display: none !important;
     }
 }
 

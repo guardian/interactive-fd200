@@ -1,5 +1,5 @@
 var pageUrl = window.location.href.split('#')[0],
-    shareCopy = 'What a cool article #Article';
+    shareCopy = 'The Frederick Douglass 200';
 
 module.exports =  {
     init: function() {

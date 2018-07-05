@@ -14,7 +14,10 @@
     color: $c-black;
 
     @include mq(tablet) {
-      font-size: 20px;
+        font-size: 18px;
+        display: inline-block;
+        padding: 0 3px;
+//         margin-left: -3px;
     }
 
     @include mq(desktop) {
@@ -35,10 +38,12 @@
     overflow: hidden;
     max-height: 0;
     visibility: hidden;
+    padding-left: 3px;
 }
 
 .uit-nav__category:hover {
   text-decoration: none;
+
     .uit-nav__entries-wrapper {
         max-height: 1000px;
         visibility: visible;
@@ -76,9 +81,16 @@
     .uit-nav__category-title {
         color: $c-white;
         background-color: $c-light-red;
-        font-size: 28px;
         transition: background-color 0.4s ease,
                     font-size .5s ease;
+
+        @include mq(tablet) {
+            font-size: 22px;
+        }
+
+        @include mq(desktop) {
+            font-size: 28px;
+        }
     }
 
     .uit-nav__entries-wrapper {
