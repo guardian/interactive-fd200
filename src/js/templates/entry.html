@@ -12,22 +12,32 @@
                     {{#hasIllustration}}
                         <img class='uit-entry__portrait' src='{{ path }}/assets/{{ handle }}.png' />
                     {{/hasIllustration}}
-                    <h2 class='uit-entry__name'>{{ name }}</h2>
-                    <h3 class='uit-entry__quick-description'>{{ quickDescription }}</h3>
 
-                    {{#twitter}}
-                        <a href='{{ twitter }}' class='uit-entry__button'>Follow on Twitter <svg class='uit-icon' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M36 19.3v.7c0 7.5-5.7 16.2-16.2 16.2a15.36 15.36 0 0 1-8.7-2.6 6.15 6.15 0 0 0 1.4.1 11.69 11.69 0 0 0 7.1-2.4 5.58 5.58 0 0 1-5.3-4 3.75 3.75 0 0 0 1.1.1 7.72 7.72 0 0 0 1.5-.2 5.7 5.7 0 0 1-4.6-5.6v-.1a5.59 5.59 0 0 0 2.6.7 5.73 5.73 0 0 1-2.5-4.7 6 6 0 0 1 .8-2.9 16.11 16.11 0 0 0 11.7 5.9 5.7 5.7 0 0 1-.1-1.3 5.7 5.7 0 0 1 5.7-5.7 6 6 0 0 1 4.2 1.8 11.25 11.25 0 0 0 3.6-1.4 6 6 0 0 1-2.5 3.2 9.54 9.54 0 0 0 3.3-.9 15.15 15.15 0 0 1-3.1 3.1z"/></svg></a>
-                    {{/twitter}}
+                    {{^hasIllustration}}
+                        <h2 class='uit-entry__name'>{{ name }}</h2>
+                        <h3 class='uit-entry__quick-description'>{{ quickDescription }}</h3>
+
+                        {{#twitter}}
+                            <a href='{{ twitter }}' class='uit-entry__button'>Follow on Twitter <svg class='uit-icon' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M36 19.3v.7c0 7.5-5.7 16.2-16.2 16.2a15.36 15.36 0 0 1-8.7-2.6 6.15 6.15 0 0 0 1.4.1 11.69 11.69 0 0 0 7.1-2.4 5.58 5.58 0 0 1-5.3-4 3.75 3.75 0 0 0 1.1.1 7.72 7.72 0 0 0 1.5-.2 5.7 5.7 0 0 1-4.6-5.6v-.1a5.59 5.59 0 0 0 2.6.7 5.73 5.73 0 0 1-2.5-4.7 6 6 0 0 1 .8-2.9 16.11 16.11 0 0 0 11.7 5.9 5.7 5.7 0 0 1-.1-1.3 5.7 5.7 0 0 1 5.7-5.7 6 6 0 0 1 4.2 1.8 11.25 11.25 0 0 0 3.6-1.4 6 6 0 0 1-2.5 3.2 9.54 9.54 0 0 0 3.3-.9 15.15 15.15 0 0 1-3.1 3.1z"/></svg></a>
+                        {{/twitter}}
+                    {{/hasIllustration}}
                 </div>
 
                 <div class='uit-entry__description'>
+                    {{#hasIllustration}}
+                        <h2 class='uit-entry__name'>{{ name }}</h2>
+                        <h3 class='uit-entry__quick-description'>{{ quickDescription }}</h3>
+                    {{/hasIllustration}}
+
                     {{{ description }}}
+
+                    {{#hasIllustration}}
+                        {{#twitter}}
+                            <a href='{{ twitter }}' class='uit-entry__button'>Follow on Twitter <svg class='uit-icon' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M36 19.3v.7c0 7.5-5.7 16.2-16.2 16.2a15.36 15.36 0 0 1-8.7-2.6 6.15 6.15 0 0 0 1.4.1 11.69 11.69 0 0 0 7.1-2.4 5.58 5.58 0 0 1-5.3-4 3.75 3.75 0 0 0 1.1.1 7.72 7.72 0 0 0 1.5-.2 5.7 5.7 0 0 1-4.6-5.6v-.1a5.59 5.59 0 0 0 2.6.7 5.73 5.73 0 0 1-2.5-4.7 6 6 0 0 1 .8-2.9 16.11 16.11 0 0 0 11.7 5.9 5.7 5.7 0 0 1-.1-1.3 5.7 5.7 0 0 1 5.7-5.7 6 6 0 0 1 4.2 1.8 11.25 11.25 0 0 0 3.6-1.4 6 6 0 0 1-2.5 3.2 9.54 9.54 0 0 0 3.3-.9 15.15 15.15 0 0 1-3.1 3.1z"/></svg></a>
+                        {{/twitter}}
+                    {{/hasIllustration}}
                 </div>
-<!--
-                {{#link}}
-                    <a href='{{ link }}' class='uit-entry__button'>Read more <svg class='uit-icon' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M38.65 25.58L37 27.21 26.79 37.44l-1.1-1.11 8.53-10.19H12.5v-2.28h21.72l-8.53-10.19 1.1-1.1L37 22.79l1.63 1.63v1.16z"/></svg></a>
-                {{/link}}
--->
+
             </li>
         {{/entries}}
     </ul>

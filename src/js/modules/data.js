@@ -12,7 +12,7 @@ module.exports =  {
     },
 
     fetchData: function() {
-        $.getJSON('https://interactive.guim.co.uk/docsdata-test/1rqzQ9H3sQO4dZDHORvmn2kTJAavbwy9P2_GvlTwsUDY.json', function(response) {
+        $.getJSON('https://interactive.guim.co.uk/docsdata/1rqzQ9H3sQO4dZDHORvmn2kTJAavbwy9P2_GvlTwsUDY.json', function(response) {
             var data = response.sheets.Sheet1;
             var categories = [];
 
@@ -29,11 +29,14 @@ module.exports =  {
                 for (var category in categories) {
                     if (categories[category].name === data[i].category) {
                         data[i].handle = data[i].name.replace(/ /g, '-').toLowerCase();
+                        data[i].hasIllustration = data[i].hasIllustration === 'TRUE';
                         data[i].description = markdown.toHTML(data[i].description);
                         categories[category].entries.push(data[i]);
                     }
                 }
             }
+
+            console.log(categories);
 
             this.injectHTML({categories: categories});
         }.bind(this));
