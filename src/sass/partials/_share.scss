@@ -11,17 +11,17 @@
     border-radius: 20px;
     float: left;
     margin-right: 4px;
-    border: 1px solid $c-light-red;
+    border: 1px solid $c-light-orange;
 
     .uit-icon {
-        fill: $c-light-red;
+        fill: $c-light-orange;
         width: 100%;
         height: 100%;
         margin: auto;
     }
 
     &:hover {
-        background-color: $c-light-red;
+        background-color: $c-light-orange;
 
         .uit-icon {
             fill: $c-white;

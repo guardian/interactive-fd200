@@ -10,7 +10,7 @@
         right: 0;
         height: calc(100vh - 41px);
         padding: 0 10px;
-        transform: translateY(-100%);
+        transform: translateY(-110%);
         transition: transform 0.4s linear;
         overflow-y: scroll;
     }
@@ -26,7 +26,7 @@
         position: fixed;
         top: 0;
         padding-top: 48px;
-        border-right: 1px solid $c-light-red;
+        border-right: 1px solid $c-light-orange;
     }
 
     @include mq(desktop) {

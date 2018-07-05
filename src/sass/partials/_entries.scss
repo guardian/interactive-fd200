@@ -6,11 +6,11 @@
 .uit-category__content {
     margin-bottom: 24px;
     padding-bottom: 24px;
-    border-bottom: 1px solid $c-light-red;
+    border-bottom: 1px solid $c-light-orange;
 }
 
 .uit-category__title {
-    @include banding($c-light-red);
+    @include banding($c-light-orange);
     font-size: 32px;
     color: $c-white;
     font-weight: normal;
@@ -24,36 +24,44 @@
 
 .uit-entry {
     padding-bottom: 24px;
-    border-bottom: 1px solid $c-light-red;
+    border-bottom: 1px solid $c-light-orange;
     margin-bottom: 24px;
     overflow: auto;
 }
 
 .uit-entry__header {
-    float: left;
-    width: 240px;
-    padding-bottom: 24px;
+    padding-bottom: 12px;
+
+    @include mq(tablet) {
+        float: left;
+        padding-bottom: 24px;
+        padding-right: 20px;
+        padding-top: 3px;
+        width: 220px;
+    }
 }
 
 .uit-entry__name,
 .uit-entry__quick-description {
     font-family: 'Guardian Egyptian Web';
     font-weight: 300;
-    font-size: 26px;
-    line-height: 1.3;
+    font-size: 20px;
+    line-height: 1.2;
     color: $c-black;
     margin: 0;
+
+    @include mq(tablet) {
+        font-size: 24px;
+    }
 }
 
 .uit-entry__quick-description {
     font-style: italic;
-    color: $c-light-red;
+    color: $c-light-orange;
 }
 
 .uit-entry__portrait {
-    max-height: 400px;
-    max-width: 180px;
-    margin: 0 auto;
+    max-width: 100px;
     display: block;
 }
 
@@ -63,9 +71,9 @@
 }
 
 .uit-entry__button {
-    @include button($c-light-red, $c-background);
+    @include button($c-light-orange, $c-background);
     font-size: 14px;
-    border: 1px solid $c-light-red;
+    border: 1px solid $c-light-orange;
     padding: 5px 32px 2px 8px;
     margin-top: 6px;
 }

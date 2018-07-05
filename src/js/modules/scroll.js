@@ -43,7 +43,7 @@ module.exports =  {
         windowHeight = $(window).height();
 
         $('.uit-category').each(function(i, el) {
-            if (windowTop >= $(el).offset().top - this.percentageOfHeight(10)) {
+            if (windowTop >= $(el).offset().top - this.percentageOfHeight(15)) {
                 stepToShow = $(el).data('category');
             }
         }.bind(this));
@@ -78,10 +78,10 @@ module.exports =  {
         $('.uit-nav__category').each(function(i, el) {
           $(el).removeClass('uit-highlighted');
             if ($(el).hasClass('uit-nav__category--' + step)) {
-                    $(el).addClass('uit-highlighted');
-                    $('.uit-mobile-nav__category-title').html(sections[step]);
-                    $('.uit-nav__category-title').removeClass('uit-nav__hidden');
-                }
+                $(el).addClass('uit-highlighted');
+                $('.uit-mobile-nav__category-title').html(sections[step]);
+                $('.uit-nav__category-title').removeClass('uit-nav__hidden');
+            }
        }.bind(this));
     },
 
