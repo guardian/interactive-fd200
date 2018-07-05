@@ -76,4 +76,13 @@
     border: 1px solid $c-light-orange;
     padding: 5px 32px 2px 8px;
     margin-top: 6px;
+
+    &:hover {
+        background-color: $c-light-orange;
+        color: $c-white;
+
+        svg path{
+            fill: $c-white;
+        }
+    }
 }
