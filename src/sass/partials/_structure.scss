@@ -21,7 +21,7 @@
 
     @include mq(tablet) {
         display: block;
-        min-height: 100vh;
+        min-height: calc(100vh - 48px);
         width: 200px;
         position: fixed;
         top: 0;

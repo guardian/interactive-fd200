@@ -17,7 +17,6 @@
         font-size: 18px;
         display: inline-block;
         padding: 0 3px;
-//         margin-left: -3px;
     }
 
     @include mq(desktop) {
@@ -142,19 +141,19 @@
 }
 
 .uit-nav__furniture {
-  padding-top: 60px;
-  font-family: 'Guardian Figures';
-  font-weight: normal;
-  font-size: 22px;
-  color: $c-black;
+    position: absolute;
+    bottom: 12px;
+    padding-top: 60px;
+    font-family: 'Guardian Figures';
+    font-weight: normal;
+    font-size: 22px;
+    color: $c-black;
 }
 
 #uit-nav__random {
-  padding-bottom: 60px;
+    padding-bottom: 60px;
 }
 
-
-
 a:hover, a:focus {
-  text-decoration: none;
+    text-decoration: none;
 }
