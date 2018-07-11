@@ -35,11 +35,11 @@
 }
 
 .uit-mobile-nav {
-    top: -200px;
     width: 100%;
     z-index: 100;
     box-sizing: border-box;
     left: 0;
+    top: 0;
     right: 0;
     display: flex;
     justify-content: space-between;
@@ -47,6 +47,7 @@
     position: fixed;
     background-color: $c-white;
     padding: 200px 10px 0;
+    transform: translateY(-200px);
 
     @include mq(mobileLandscape) {
         padding: 200px 20px 0;
