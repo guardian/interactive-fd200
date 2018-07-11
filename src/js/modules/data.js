@@ -12,7 +12,7 @@ module.exports =  {
     },
 
     fetchData: function() {
-        $.getJSON('https://interactive.guim.co.uk/docsdata-test/1rqzQ9H3sQO4dZDHORvmn2kTJAavbwy9P2_GvlTwsUDY.json', function(response) {
+        $.getJSON('https://interactive.guim.co.uk/docsdata/1rqzQ9H3sQO4dZDHORvmn2kTJAavbwy9P2_GvlTwsUDY.json', function(response) {
             var data = response.sheets.Sheet1;
             var categories = [];
 
