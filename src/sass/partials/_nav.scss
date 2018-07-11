@@ -5,13 +5,19 @@
 .uit-nav__category {
     margin-bottom: 6px;
     overflow: hidden;
+
+    a {
+        text-decoration: none;
+    }
 }
 
 .uit-nav__category-title {
     font-family: 'Guardian Figures';
     font-weight: normal;
     font-size: 26px;
+    line-height: 1.5;
     color: $c-black;
+    margin: 0;
 
     @include mq(tablet) {
         font-size: 18px;
@@ -70,6 +76,7 @@
     color: $c-black;
     font-family: 'Guardian Egyptian Web';
     font-weight: 400;
+    margin: 0;
 }
 
 .uit-nav__entry:hover {

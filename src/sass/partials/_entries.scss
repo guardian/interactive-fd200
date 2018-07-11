@@ -1,5 +1,6 @@
 .uit-category {
     margin: 0;
+    padding: 0;
     list-style: none;
 }
 
@@ -16,6 +17,10 @@
     font-weight: normal;
     font-family: 'Guardian Figures';
     margin-bottom: 4px;
+
+    @include mq(tablet) {
+        font-size: 42px;
+    }
 }
 
 .uit-category__description {
@@ -52,6 +57,7 @@
 
     @include mq(tablet) {
         font-size: 24px;
+        max-width: 480px;
     }
 }
 
@@ -61,7 +67,7 @@
 }
 
 .uit-entry__portrait {
-    max-width: 100%;
+    max-width: 240px;
     display: block;
 }
 
