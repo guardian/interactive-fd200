@@ -2,6 +2,7 @@ var Mustache = require('mustache');
 var markdown = require('markdown').markdown;
 var entryHTML = require('../templates/entry.html');
 var listHTML = require('../templates/list.html');
+var newHTML = require('../templates/new.html');
 var count;
 
 var sections = ['Abolitionist','Diplomat','Educator','Entrepreneur','Writer','Feminist','Politician']
@@ -15,6 +16,7 @@ module.exports =  {
         $.getJSON('https://interactive.guim.co.uk/docsdata/1rqzQ9H3sQO4dZDHORvmn2kTJAavbwy9P2_GvlTwsUDY.json', function(response) {
             var data = response.sheets.Sheet1;
             var categories = [];
+            var newEntries = [];
 
             for (var i in sections) {
                 categories.push({
@@ -33,13 +35,17 @@ module.exports =  {
                         data[i].description = markdown.toHTML(data[i].description);
                         data[i].twitter = 'https://www.twitter.com/' + data[i].twitter.replace('@', '');
                         categories[category].entries.push(data[i]);
+
+                        if (i >= data.length - 10) {
+                            data[i].last = i == data.length - 1;
+                            data[i].comma = i < data.length - 2;
+                            newEntries.push(data[i]);
+                        }
                     }
                 }
             }
 
-            console.log(categories);
-
-            this.injectHTML({categories: categories});
+            this.injectHTML({categories: categories, new: newEntries});
         }.bind(this));
     },
 
@@ -49,6 +55,10 @@ module.exports =  {
 
         var compiledList = Mustache.render(listHTML, data);
         $('.uit-nav__category-wrapper').append(compiledList);
+
+        var compiledNew = Mustache.render(newHTML, data);
+        $('.uit-intro__new').append(compiledNew);
+
         this.hideLoader();
     },
 
