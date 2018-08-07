@@ -33,9 +33,12 @@ module.exports =  {
                         data[i].handle = data[i].name.replace(/ /g, '-').toLowerCase();
                         data[i].hasIllustration = data[i].hasIllustration === 'TRUE';
                         data[i].description = markdown.toHTML(data[i].description);
-                        data[i].twitter = 'https://www.twitter.com/' + data[i].twitter.replace('@', '');
+                        if (data[i].twitter != ''){
+                            data[i].twitter = 'https://www.twitter.com/' + data[i].twitter.replace('@', '');
+                        } else {
+                            data[i].twitter = null;
+                        }
                         categories[category].entries.push(data[i]);
-
                         if (i >= data.length - 10) {
                             data[i].last = i == data.length - 1;
                             data[i].comma = i < data.length - 2;
